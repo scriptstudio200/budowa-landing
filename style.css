@@ -1,0 +1,518 @@
+/* ОБНУЛЕНИЕ СТИЛЕЙ И ШРИФТЫ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #1a1a1a; /* Темный брутальный фон */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ШАПКА САЙТА (Glassmorphism) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 1000;
+    background: rgba(26, 26, 26, 0.75); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo b {
+    color: #ff6a00; /* Строительный оранжевый акцент */
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6a00;
+}
+
+.nav-links .btn-nav {
+    background: #ff6a00;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.nav-links .btn-nav:hover {
+    background: #e05d00;
+    color: #fff;
+}
+
+/* ГЛАВНЫЙ ЭКРАН */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('img/remont.jpg') no-repeat center center/cover;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 850px;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* КНОПКИ */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary {
+    background: #ff6a00;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #e05d00;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+/* =================================================== */
+/* НОВЫЕ СТИЛИ: БЛОКИ "О НАС" И "УСЛУГИ"               */
+/* =================================================== */
+
+/* ОБЩИЙ КОНТЕЙНЕР ДЛЯ ВЫРАВНИВАНИЯ ПО ЦЕНТРУ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* СТИЛИ БЛОКА "О НАС" */
+.about-section {
+    padding: 100px 0;
+    background-color: #1f1f1f; /* Чуть светлее основного фона для контраста */
+}
+
+.about-text h2 {
+    color: #ff6a00;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #b3b3b3;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+/* Сетка с цифрами опыта */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-box {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 6px;
+    border-left: 4px solid #ff6a00; /* Стильная оранжевая полоса слева */
+}
+
+.stat-box .number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff6a00;
+    margin-bottom: 5px;
+}
+
+.stat-box .stat-title {
+    color: #e0e0e0;
+    font-size: 14px;
+}
+
+/* СТИЛИ БЛОКА УСЛУГ */
+.services-section {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+}
+
+.section-title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+/* Сетка карточек (Grid) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: #1f1f1f;
+    padding: 40px 30px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Эффект при наведении на карточку услуг */
+.service-card:hover {
+    transform: translateY(-5px); /* Карточка плавно приподнимается */
+    border-color: rgba(255, 106, 0, 0.3); /* Появляется легкое оранжевое свечение */
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #ff6a00;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+/* =================================================== */
+/* НОВЫЕ СТИЛИ: БЛОК КОНТАКТНОЙ ФОРМЫ                  */
+/* =================================================== */
+
+.contact-section {
+    padding: 100px 0;
+    background-color: #1f1f1f; /* Светлый темный тон для контраста */
+    text-align: center;
+}
+
+.contact-subtitle {
+    color: #a0a0a0;
+    margin-top: -40px;
+    margin-bottom: 50px;
+    font-size: 16px;
+}
+
+.contact-wrapper {
+    max-width: 600px; /* Ограничиваем ширину формы, чтобы она была аккуратной */
+    margin: 0 auto;
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    text-align: left; /* Текст внутри формы выравниваем по левому краю */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #e0e0e0;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Стили для полей ввода (Имя, Телефон, Сообщение) */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #252525;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+/* Эффект, когда клиент кликает на поле для ввода текста */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff6a00; /* Поле подсвечивается оранжевым */
+}
+
+/* Кнопка отправки формы */
+.btn-submit {
+    width: 100%;
+    background: #ff6a00;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #e05d00;
+}
+/* =================================================== */
+/* СТИЛИ ДЛЯ ПОДВАЛА (FOOTER)                          */
+/* =================================================== */
+.footer {
+    background: #111111; /* Самый темный цвет для финала */
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.02);
+    font-size: 14px;
+    color: #666666;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.dev-credits b {
+    color: #ff6a00; /* Твой фирменный оранжевый для названия студии */
+}
+/* Стили для секции Преимущества */
+.features {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+/* Стили для секции Услуги */
+.services {
+    padding: 80px 0;
+    background-color: #fff; /* Чередуем фон: белый после серого */
+    text-align: center;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-item {
+    background: #111; /* Стильный темный фон для контраста */
+    color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
+    border-bottom: 4px solid #ffcc00; /* Желтая строительная полоса внизу */
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Желтый акцент на заголовке */
+}
+
+.service-item p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #ffcc00;
+    color: #111;
+    padding: 8px 15px;
+    border-radius: 4px;
+    align-self: center;
+}
+/* Стили для секции Контакты */
+.contact {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.contact-subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.contact-form input {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus {
+    border-color: #ffcc00; /* Желтый фокус при клике */
+}
+
+.submit-btn {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #ffcc00;
+    color: #111;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Стили для Подвала */
+.footer {
+    background-color: #111;
+    color: #777;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+}
