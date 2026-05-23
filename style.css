@@ -70,7 +70,7 @@ body {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -368,6 +368,7 @@ body {
 
 .features-grid {
     display: flex;
+    flex-wrap: wrap; /* Вот это разрешит перенос карточек вниз */
     justify-content: space-between;
     gap: 30px;
     max-width: 1200px;
@@ -382,6 +383,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     flex: 1;
     transition: transform 0.3s ease;
+    min-width: 280px; /* Просто дописали строчку внутрь */
 }
 
 .feature-card:hover {
@@ -413,6 +415,7 @@ body {
 
 .services-grid {
     display: flex;
+    flex-wrap: wrap; /* Тоже разрешаем перенос */
     justify-content: space-between;
     gap: 30px;
     max-width: 1200px;
@@ -431,6 +434,7 @@ body {
     justify-content: space-between;
     min-height: 250px;
     border-bottom: 4px solid #ffcc00; /* Желтая строительная полоса внизу */
+    min-width: 280px;
 }
 
 .service-item h3 {
